@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>KityMinder Editor</title>
+
+	<link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
+
+	<!-- bower:css -->
+	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="./bower_components/codemirror/lib/codemirror.css" />
+	<link rel="stylesheet" href="./bower_components/hotbox/hotbox.css" />
+	<link rel="stylesheet" href="./bower_components/kityminder-core/dist/kityminder.core.css" />
+	<link rel="stylesheet" href="./bower_components/color-picker/dist/color-picker.min.css" />
+	<!-- endbower -->
+
+	
+
+	<link rel="stylesheet" href="kityminder.editor.min.css">
+
+	<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			overflow: hidden;
+		}
+		h1.editor-title {
+			background: #393F4F;
+			color: white;
+			margin: 0;
+			height: 40px;
+			font-size: 14px;
+			line-height: 40px;
+			font-family: 'Hiragino Sans GB', 'Arial', 'Microsoft Yahei';
+			font-weight: normal;
+			padding: 0 20px;
+		}
+		div.minder-editor-container {
+			position: absolute;
+			top: 40px;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+	</style>
+</head>
+
+<body ng-app="kityminderDemo" ng-controller="MainController">
+
+	<div id="app">
+		<!-- 在这里使用 Element-UI 的弹窗组件
+		<el-button @click="openDialog">打开弹窗</el-button> -->
+		<el-dialog :visible.sync="dialogVisible" title="弹窗标题">
+			<p>这是一个弹窗内容</p>
+		</el-dialog>
+	</div>
+	
+<h1 class="editor-title">
+	<a href="http://www.huangyebo.cn" style="color: #fff;" target="_blank">
+		KityMinder Editor - Powered By hyb
+	</a>
+<a href="https://beian.miit.gov.cn/" target="_blank"></a>
+</h1>
+
+<kityminder-editor on-init="initEditor(editor, minder)" data-theme="fresh-green"></kityminder-editor>
+<iframe name="frameFile" style="display:none;"></iframe>
+
+
+
+<div>
+</div>
+</body>
+
+<!-- bower:js -->
+<script src="./bower_components/jquery/dist/jquery.js"></script>
+<script src="./bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="./bower_components/angular/angular.js"></script>
+<script src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="./bower_components/codemirror/lib/codemirror.js"></script>
+<script src="./bower_components/codemirror/mode/xml/xml.js"></script>
+<script src="./bower_components/codemirror/mode/javascript/javascript.js"></script>
+<script src="./bower_components/codemirror/mode/css/css.js"></script>
+<script src="./bower_components/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<script src="./bower_components/codemirror/mode/markdown/markdown.js"></script>
+<script src="./bower_components/codemirror/addon/mode/overlay.js"></script>
+<script src="./bower_components/codemirror/mode/gfm/gfm.js"></script>
+<script src="./bower_components/angular-ui-codemirror/ui-codemirror.js"></script>
+<script src="./bower_components/marked/lib/marked.js"></script>
+<script src="./bower_components/kity/dist/kity.min.js"></script>
+<script src="./bower_components/hotbox/hotbox.js"></script>
+<script src="./bower_components/json-diff/json-diff.js"></script>
+<script src="./bower_components/kityminder-core/dist/kityminder.core.min.js"></script>
+<script src="./bower_components/color-picker/dist/color-picker.min.js"></script>
+<!-- endbower -->
+
+<script src="kityminder.editor.min.js"></script>
+<script src="diy.js"></script>
+
+<!-- 引入 Vue.js -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- 引入 Element-UI 样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入 Element-UI 组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+<script>
+	angular.module('kityminderDemo', ['kityminderEditor'])
+	.controller('MainController', function($scope) {
+		$scope.initEditor = function(editor, minder) {
+			window.editor = editor;
+			window.minder = minder;
+		};
+	});
+
+	var myApp = new Vue({
+      el: '#app',
+      data() {
+        return {
+          dialogVisible: false // 控制弹窗的显示和隐藏
+        }
+      },
+      methods: {
+        openDialog() {
+          this.dialogVisible = true; // 打开弹窗
+        }
+      }
+    });
+
+	document.addEventListener("DOMContentLoaded", function() {
+      // 在页面加载完成后执行的 JavaScript 代码
+      // 发起请求
+		console.log("监听页面初始化")
+		var content = '{"root":{"data":{"id":"ctojgfitvug0","created":1687981368534,"text":"测试123"},"children":[]},"template":"default","theme":"fresh-blue","version":"1.4.33"} '
+        editor.minder.importData('json', content).then(function (data) {
+            console.log(data)
+        });
+    });
+</script>
+
+
+</html>

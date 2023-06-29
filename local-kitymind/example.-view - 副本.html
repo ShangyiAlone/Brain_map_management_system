@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>KityMinder Example</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" >
+    <link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" href="src/kityminder.css" rel="stylesheet">
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        #minder-view {
+            position: absolute;
+            border: 1px solid #ccc;
+            left: 10px;
+            top: 10px;
+            bottom: 10px;
+            right: 10px;
+        }
+    </style>
+
+    <script type="text/javascript" src="bower_components/kity/dist/kity.min.js"></script>
+</head>
+<body>
+    <script id="minder-view" type="application/kityminder" minder-data-type="json">
+    {"root":{"data":{"id":"XAVKRSEF27UX","text":"bop智能实时监控验收"},"children":[{"data":{"id":"csez1o7aa9k0","created":1683353591716,"text":"需求"},"children":[{"data":{"id":"csez1uok8c80","created":1683353605821,"text":"是否有增值控制"},"children":[]},{"data":{"id":"csez21gitk00","created":1683353620573,"text":"功能模块是否完整"},"children":[]},{"data":{"id":"csf04wgejqw0","created":1683356665884,"text":"提出需求，需求蔓延"},"children":[]},{"data":{"id":"csf07j64bk00","created":1683356872057,"text":"使用者是谁？"},"children":[]}]},{"data":{"id":"csez1pe3oyw0","created":1683353594305,"text":"研发"},"children":[{"data":{"id":"csez94dzm8w0","created":1683354175499,"text":"地址"},"children":[{"data":{"id":"csez95lvcq00","created":1683354178152,"text":"http://120.27.166.214/bop-web/bl_login.htm"},"children":[]},{"data":{"id":"csez99l7d200","created":1683354186819,"text":"10001/123123"},"children":[]}]}]},{"data":{"id":"csez2ua9hq80","created":1683353683321,"text":"ued"},"children":[{"data":{"id":"csez2wrqaxk0","created":1683353688731,"text":"验收风格样式"},"children":[]},{"data":{"id":"csez335j9nk0","created":1683353702626,"text":"验收设计交互"},"children":[{"data":{"id":"csez35o8dns0","created":1683353708110,"text":"含文字"},"children":[]},{"data":{"id":"csezb0wlbj40","created":1683354324645,"text":"含展示逻辑"},"children":[]},{"data":{"id":"csezb78quf40","created":1683354338441,"text":"含客户提示"},"children":[{"data":{"id":"csezc9zopr40","created":1683354422787,"text":"是否有跳转"},"children":[]}]},{"data":{"id":"csezb9x7rkg0","created":1683354344274,"text":"含页面价值","expandState":"expand"},"children":[{"data":{"id":"csezbe4q07s0","created":1683354353435,"text":"颜色标识重要性？","expandState":"expand"},"children":[]},{"data":{"id":"csezbl8oei80","created":1683354368912,"text":"勾稽关系"},"children":[]}]}]},{"data":{"id":"csez3a9e5vc0","created":1683353718097,"text":"系统易用性"},"children":[{"data":{"id":"csez3cd2qrs0","created":1683353722673,"text":"是否理解"},"children":[{"data":{"id":"csez5p0a6u00","created":1683353906926,"text":"专业术语和解释是否需要补充说明体现"},"children":[]}]}]},{"data":{"id":"csezkz9i5r40","created":1683355104714,"text":"ued提供设计稿"},"children":[{"data":{"id":"csezl43b66w0","created":1683355115223,"text":"是否评审定稿"},"children":[]}]}]},{"data":{"id":"csezffpq3e00","created":1683354670338,"text":"验收流程"},"children":[{"data":{"id":"csezfgxmqmw0","created":1683354672993,"text":"开会前，提前给出意见，不一致问题可以在T-1日会议前给出"},"children":[]},{"data":{"id":"csezg5vyfnk0","created":1683354727311,"text":"会上记录问题，不展开"},"children":[]}]},{"data":{"id":"csezq96dlew0","created":1683355518114,"text":"疑问"},"children":[{"data":{"id":"csezqa14t4o0","created":1683355519973,"text":"监控的目的是什么？"},"children":[{"data":{"id":"csezqinbzo80","created":1683355538730,"text":"解决了什么问题"},"children":[]},{"data":{"id":"csezql3s3oo0","created":1683355544078,"text":"通过数据显示得到了什么结论"},"children":[{"data":{"id":"csezqxd5lqg0","created":1683355570766,"text":"不要看完不知道得到了什么信息"},"children":[]}]}]}]}]},"template":"right","theme":"fresh-blue","version":"1.4.43"}
+    </script>
+</body>
+
+<script type="text/javascript" src="bower_components/kityminder-core/dist/kityminder.core.min.js"></script>
+<script type="text/javascript">
+    // 创建 km 实例
+    /* global kityminder */
+    var km = window.km = new kityminder.Minder();
+    km.setup('#minder-view');
+    km.disable();
+    km.execCommand('hand');
+</script>
+
+</html>
