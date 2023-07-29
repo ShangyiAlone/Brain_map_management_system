@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>KityMinder Example</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" >
+    <link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" href="src/kityminder.css" rel="stylesheet">
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        #minder-view {
+            position: absolute;
+            border: 1px solid #ccc;
+            left: 10px;
+            top: 10px;
+            bottom: 10px;
+            right: 10px;
+        }
+    </style>
+
+    <script type="text/javascript" src="bower_components/kity/dist/kity.min.js"></script>
+</head>
+<body>
+    <script id="minder-view" type="application/kityminder" minder-data-type="json">
+    {"root":{"data":{"id":"1c3ca3684c23","created":1682776505,"text":"新建脑图"},"children":[{"data":{"id":"cs9ainjysi00","created":1682776594966,"text":"BOP产品性能问题分析计划的思考"},"children":[{"data":{"id":"cs9ainjzbpk0","created":1682776594967,"text":"客户遇到了哪些方面的问题"},"children":[{"data":{"id":"cs9ainjzbu00","created":1682776594967,"text":"生产环境服务器CPU飙升，60-80%"},"children":[]},{"data":{"id":"cs9ainjzayo0","created":1682776594967,"text":"tomcat假死"},"children":[]},{"data":{"id":"cs9ainjzbjs0","created":1682776594967,"text":"数据库CPU飙升"},"children":[]},{"data":{"id":"cs9ainjzpyw0","created":1682776594967,"text":"周边大量接口超时"},"children":[]},{"data":{"id":"cs9aink06ow0","created":1682776594968,"text":"系统卡顿，菜单打开慢"},"children":[]},{"data":{"id":"cs9aink0cqo0","created":1682776594968,"text":"菜单点开异常，报错500"},"children":[]}]},{"data":{"id":"cs9aink077k0","created":1682776594968,"text":"可能出现问题的原因"},"children":[{"data":{"id":"cs9ainjzxtc0","created":1682776594968,"text":"JVM的配置参数"},"children":[]},{"data":{"id":"cs9aink08oo0","created":1682776594968,"text":"tomcat的配置参数"},"children":[]},{"data":{"id":"cs9ainjzww80","created":1682776594968,"text":"hsiar/nginx的配置参数"},"children":[]},{"data":{"id":"cs9aink0qw00","created":1682776594969,"text":"t2sdk的配置参数（ares-app-config.vm/t2sdk-config-acct.xml）"},"children":[]},{"data":{"id":"cs9aink0xz40","created":1682776594969,"text":"cres配置参数fsc_channel_t2sub插件"},"children":[]},{"data":{"id":"cs9aink0krk0","created":1682776594969,"text":"数据库中重要表的表数据量，及表结构查询的合理性"},"children":[]},{"data":{"id":"cs9aink0gbs0","created":1682776594969,"text":"redis读写分离问题"},"children":[]},{"data":{"id":"cs9aink0neo0","created":1682776594969,"text":"调用的系统（UF2.0/账户系统/新档案）出现积压导致"},"children":[]}]},{"data":{"id":"cs9aink0w4w0","created":1682776594969,"text":"如何化被动为主动"},"children":[{"data":{"id":"cs9aink0f8w0","created":1682776594969,"text":"哪些共性问题可以发起检查并统一升级（客户的内存，版本，配置等）"},"children":[]},{"data":{"id":"cs9aink0w2o0","created":1682776594969,"text":"哪些可以提前获取问题发生时的信息记录"},"children":[]},{"data":{"id":"cs9aink0ivs0","created":1682776594969,"text":"日志，开启cep监控，统计"},"children":[{"data":{"id":"cs9aink0g6o0","created":1682776594969,"text":"输出gclog"},"children":[]},{"data":{"id":"cs9aink18600","created":1682776594970,"text":"获取CPU/GC/jstack等信息脚本考虑固化流程，如嵌入到重启tomcat脚本中等"},"children":[]}]},{"data":{"id":"cs9aink18io0","created":1682776594970,"text":"优化（细化具体方向）"},"children":[]},{"data":{"id":"cs9aink1dso0","created":1682776594970,"text":"人员能力提升（限定时间，拟定计划）"},"children":[{"data":{"id":"cs9aink1brs0","created":1682776594970,"text":"培养备岗"},"children":[{"data":{"id":"cs9aink1cbs0","created":1682776594970,"text":"固定时间，如两个月，针对性计划，得到一个计划列表，每周跟踪"},"children":[]}]},{"data":{"id":"cs9aink14tc0","created":1682776594970,"text":"思考其他人为什么不能分析，缺少哪块理解，针对性培养"},"children":[]}]},{"data":{"id":"cs9aink1e000","created":1682776594970,"text":"排查思路标准化和流程化"},"children":[{"data":{"id":"cs9aink168w0","created":1682776594970,"text":"具体的操作流程和步骤固化"},"children":[{"data":{"id":"cs9aink1ghs0","created":1682776594970,"text":"例："},"children":[]}]}]}]}]},{"data":{"id":"cs9aink18aw0","created":1682776594970,"text":"1、首先确定客户升级版本，tomcat\\jdk版本；"},"children":[]},{"data":{"id":"cs9aink1s880","created":1682776594971,"text":"2、协同测试一起模拟客户环境版本是否可以重现；"},"children":[]},{"data":{"id":"cs9aink1srk0","created":1682776594971,"text":"3、从入口开始，逐步逐个点分析思路不发散；"},"children":[]},{"data":{"id":"cs9aink1ueg0","created":1682776594971,"text":"4、条件允许的情况下，可否打日志验证；"},"children":[]},{"data":{"id":"cs9aink1q8w0","created":1682776594971,"text":"5、cep监控是否在性能满足条件下全部开启；"},"children":[]},{"data":{"id":"cs9aink1yhs0","created":1682776594971,"text":"6、针对各种场景下的报错，枚举出报错可能性和解决排查思路"},"children":[]}]},"template":"default","theme":"fresh-blue","version":"1.4.43"}
+    </script>
+</body>
+
+<script type="text/javascript" src="bower_components/kityminder-core/dist/kityminder.core.min.js"></script>
+<script type="text/javascript">
+    // 创建 km 实例
+    /* global kityminder */
+    var km = window.km = new kityminder.Minder();
+    km.setup('#minder-view');
+    km.disable();
+    km.execCommand('hand');
+</script>
+
+</html>
