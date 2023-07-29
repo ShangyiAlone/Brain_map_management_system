@@ -1,4 +1,4 @@
-# vue_shop
+# 脑图管理系统
 
 ## Project setup
 ```
